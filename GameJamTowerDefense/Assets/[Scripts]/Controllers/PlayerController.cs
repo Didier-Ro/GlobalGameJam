@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask _layerMaskGround = default;
     [SerializeField] private UnityEvent<string> OnWeaponPurchased = default;
     [SerializeField] private GameState _gameState = default;
+    [SerializeField] private GameObject _minionPrefab;
+    [SerializeField] private GameObject _shamanPrefab;
 
     private void Start()
     {
@@ -37,6 +39,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case "LaserTurret":
                 _heldWeapon = Instantiate(_laserTurretPrefab);
+                break;
+            case "Minion":
+                _heldWeapon = Instantiate(_minionPrefab);
+                break;
+            case "Shaman":
+                _heldWeapon = Instantiate(_shamanPrefab);
                 break;
             default:
                 Debug.LogError($"Weapon type {weaponType} is not valid");
