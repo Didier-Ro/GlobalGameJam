@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -449,6 +449,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeleft: 0
   _time: 0
+  _roundLeft: 0
+  _timerOn: 0
+  _defenseTurn: 0
   textTime: {fileID: 1720703908}
 --- !u!114 &1627527172
 MonoBehaviour:
@@ -462,7 +465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1494dc6ad6da9dc44a3f372cd2dd26bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _preparationTime: 30
+  _preparationTime: 10
+  _roundDuration: 15
   _rounds: 3
 --- !u!1 &1720703906
 GameObject:
