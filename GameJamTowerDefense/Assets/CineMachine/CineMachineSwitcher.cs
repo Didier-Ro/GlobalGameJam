@@ -5,8 +5,8 @@ using UnityEngine;
 public class CineMachineSwitcher : MonoBehaviour
 {
     private Animator animator;
-
-    private bool mexicanCamera = true;
+  [SerializeField] private RoundManager roundManager;
+  [SerializeField] private int StateCamera = 1;
 
     private void Awake()
     {
@@ -15,20 +15,31 @@ public class CineMachineSwitcher : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
+            Debug.Log(StateCamera);
             SwitchCamera();
         }
+     
     }
-    private void SwitchCamera()
+    public void SwitchCamera()
     {
-        if (mexicanCamera)
+        switch (StateCamera)
         {
-            animator.Play("MexicanCamera");
+            default:
+                break;
+            case 1:
+                animator.Play("SpanishCamera");
+                StateCamera++;
+                break;
+            case 2:
+                animator.Play("MapCamera");
+                StateCamera++;
+                break;
+            case 3:
+                roundManager._roundLeft--;
+                animator.Play("MexicanCamera");
+                StateCamera = 1;
+                break;
         }
-        else 
-        {  
-            animator.Play("SpanishCamera");
-        }
-
-        mexicanCamera = !mexicanCamera;
+        Debug.Log("hola");
     }
 }
