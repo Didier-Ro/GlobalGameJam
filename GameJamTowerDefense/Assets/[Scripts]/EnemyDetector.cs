@@ -6,6 +6,7 @@ public class EnemyDetector : MonoBehaviour
     [SerializeField] private Transform _detectedTarget = default;
     [SerializeField] private float _maxAttackRange = 12;
     [SerializeField] private UnityEvent<Transform> OnEnemyDetected = default;
+    [SerializeField] private UnityEvent OnEnemyRange = default;
     [SerializeField] private UnityEvent OnEnemyLost = default;
     [SerializeField] private WeaponAttack _weapon = default;
 
@@ -15,6 +16,7 @@ public class EnemyDetector : MonoBehaviour
         {
             _detectedTarget = other.transform;
             OnEnemyDetected?.Invoke(other.transform);
+            OnEnemyRange?.Invoke();
         }
         
     }

@@ -20,8 +20,9 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField] private GameObject _cannonBallPrefab = default;
     [SerializeField] private Transform _cannonBallSpawn = default;
 
-    private void Start()
+    public void EnemyInRange()
     {
+        IsEnemyInRange();
         StartCoroutine(FireRoutine());
     }
 
@@ -31,7 +32,6 @@ public class WeaponAttack : MonoBehaviour
         {
             //Ray ray = new Ray(_cannonBallSpawn.position, _cannonBallSpawn.forward);
             RaycastHit hit;
-            Debug.Log("Hit");
             if (Physics.Raycast(_cannonBallSpawn.position, _cannonBallSpawn.forward, out hit, 10))
             {
                 Debug.Log(hit.collider.tag);

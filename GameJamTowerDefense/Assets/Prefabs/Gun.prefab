@@ -720,9 +720,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnEnemyRange:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 8600855241683428417}
         m_TargetAssemblyTypeName: WeaponAttack, Assembly-CSharp
-        m_MethodName: IsEnemyInRange
+        m_MethodName: EnemyInRange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

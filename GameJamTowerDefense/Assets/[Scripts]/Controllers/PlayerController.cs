@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
                         _heldWeapon.transform.position = hit.transform.position;
                         _heldWeapon.transform.SetParent(hit.transform);
                         //_heldWeapon.GetComponent<WeaponAttack>().StartWeaponAttack();
-                        Debug.Log("Weapon attack");
                         _heldWeapon = null;
                     }
                 }
