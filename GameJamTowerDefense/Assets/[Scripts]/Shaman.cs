@@ -21,7 +21,7 @@ public class Shaman : MonoBehaviour
     IEnumerator ShamanAOE()
     {
         Instantiate(_shamanAOE, _enemy.position, Quaternion.identity);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         _enemy = null;
     }
 }
