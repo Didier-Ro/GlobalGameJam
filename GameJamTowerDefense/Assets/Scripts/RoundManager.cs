@@ -1,15 +1,17 @@
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-public class GameManager : MonoBehaviour
+using TMPro;
+public class RoundManager : MonoBehaviour
 {
     [SerializeField] private float _timeleft;
     [SerializeField] private float _time;
-    [SerializeField] private int _roundLeft = default;
-    [SerializeField] private bool _timerOn = false;
+    public int _roundLeft = default;
+    [SerializeField] private float _phaseTimer = 0;
     [SerializeField] private bool _defenseTurn = default;
     [SerializeField] private TextMeshProUGUI textTime = default;
     private MenuData _menuData;
+    [SerializeField] private CineMachineSwitcher cineMachineSwitcher = null;
 
     private void Start()
     {
@@ -18,12 +20,12 @@ public class GameManager : MonoBehaviour
         _time = _menuData.PreparationTime;
         _roundLeft = _menuData.Rounds;
         _defenseTurn = true;
-        _timerOn = false;
+        _phaseTimer = 0;
     }
 
     void Update()
     {
-        if(_timerOn)
+        if(_phaseTimer == 0)
         {
             if (_timeleft > 0)
             {
@@ -32,23 +34,23 @@ public class GameManager : MonoBehaviour
             else
             {
                 _timeleft = _menuData.PreparationTime;
-                _timerOn = false;
-                if (!_defenseTurn)
-                {
-                    _roundLeft--;
-                }
-                _defenseTurn = !_defenseTurn;
+                _phaseTimer = 1;
+                cineMachineSwitcher.SwitchCamera();
             }
             textTime.text = _timeleft.ToString("0");
         }
-        else
+        else if(_phaseTimer == 1)
         {
-            PreparationTime();
+           AttackTime();
+            textTime.text = _timeleft.ToString("0");
+        }
+       else if(_phaseTimer == 2){
+           BattleTime();
             textTime.text = _timeleft.ToString("0");
         }
     }
 
-    private void PreparationTime()
+    private void AttackTime()
     {
         if (_timeleft > 0)
         {
@@ -57,9 +59,21 @@ public class GameManager : MonoBehaviour
         else
         {
             _timeleft = _menuData.RoundDuration;
-            _timerOn = true;
+            cineMachineSwitcher.SwitchCamera();
+            _phaseTimer = 2;
         }
-        
     }
-
+    private void BattleTime()
+    {
+        if (_timeleft > 0)
+        {
+            _timeleft -= Time.deltaTime;
+        }
+        else
+        {
+            _time = _menuData.PreparationTime;
+            cineMachineSwitcher.SwitchCamera();
+            _phaseTimer = 0;
+        }
+    }
 }
