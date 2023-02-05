@@ -12,7 +12,7 @@ public class EnemyDetector : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (_detectedTarget == null && other.CompareTag("Enemy"))
+        if (_detectedTarget == null && other.CompareTag("Espanol"))
         {
             _detectedTarget = other.transform;
             OnEnemyDetected?.Invoke(other.transform);

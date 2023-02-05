@@ -10,6 +10,11 @@ public class Health : MonoBehaviour
     [SerializeField] private UnityEvent OnZeroHealth;
     SpanishStats spanishStats;
 
+    private void Awake()
+    {
+        spanishStats = GetComponent<SpanishStats>();
+    }
+
     public int CurrentHealth
     {
         get => _currentHealth;

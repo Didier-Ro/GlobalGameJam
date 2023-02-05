@@ -109,12 +109,15 @@ GameObject:
   - component: {fileID: 2045852237240422898}
   - component: {fileID: 2045852237240422901}
   - component: {fileID: 2045852237240422900}
-  - component: {fileID: 2045852237240422903}
   - component: {fileID: 2045852237240422896}
   - component: {fileID: -3213484698540605610}
   - component: {fileID: 5458826651603888725}
   - component: {fileID: -3101445976220974413}
   - component: {fileID: -7557352799913685813}
+  - component: {fileID: 9104680385336930619}
+  - component: {fileID: 1738990438323606954}
+  - component: {fileID: 9108262599463487140}
+  - component: {fileID: -4492535160529864015}
   m_Layer: 3
   m_Name: Capsule
   m_TagString: Espanol
@@ -202,23 +205,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2045852237240422903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045852237240422902}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a7fd37fd2c87d429fdcb6cc307083b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  movementSpeed: 4
-  target: {fileID: 0}
-  rotationSpeed: 6
-  cont: 0
 --- !u!54 &2045852237240422896
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242,19 +228,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045852237240422902}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99c5d567f9e67514d965dbfc06671f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
-  movementSpeed: 4
-  target: {fileID: 0}
-  rotationSpeed: 6
-  cont: 0
 --- !u!114 &5458826651603888725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +268,19 @@ MonoBehaviour:
       m_Calls: []
   OnZeroHealth:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9108262599463487140}
+        m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+        m_MethodName: DestroyWithDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-7557352799913685813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,9 +294,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 800
-  _speed: 1.8
+  _speed: 18
   _regenRate: 10
   _speedRate: 0
   _cost: 850
   _deathAward: 7
   _damage: 40
+--- !u!114 &9104680385336930619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045852237240422902}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a7fd37fd2c87d429fdcb6cc307083b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  movementSpeed: 4
+  target: {fileID: 0}
+  rotationSpeed: 6
+  cont: 0
+--- !u!114 &1738990438323606954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045852237240422902}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a7fd37fd2c87d429fdcb6cc307083b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  movementSpeed: 4
+  target: {fileID: 0}
+  rotationSpeed: 6
+  cont: 0
+--- !u!114 &9108262599463487140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045852237240422902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ee067cbbee3b84c9268374de587066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyDelay: 0.1
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-4492535160529864015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045852237240422902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc29c57e0fa17949a6a7090ad5c1ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerDamage: 40
+  _tagToCompare: Piramide
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls: []

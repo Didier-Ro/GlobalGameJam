@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48c5266099781c40aac90ccbc5a16aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cannonBallSpeed: 10
+  _cannonBallSpeed: 80
 --- !u!114 &7384137390407900448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc29c57e0fa17949a6a7090ad5c1ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _powerDamage: 10
-  _tagToCompare: Enemy
+  _powerDamage: 80
+  _tagToCompare: Espanol
   OnTrigger:
     m_PersistentCalls:
       m_Calls:

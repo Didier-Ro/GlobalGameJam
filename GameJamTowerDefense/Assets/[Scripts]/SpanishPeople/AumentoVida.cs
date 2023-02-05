@@ -10,11 +10,12 @@ public class AumentoVida : MonoBehaviour
     [SerializeField] Health health;
     private void Awake()
     {
-        spanishStats = new SpanishStats();
+        spanishStats = GetComponent<SpanishStats>();
         regenRate = spanishStats.RegenRate;
     }
     private void Start()
     {
+        health = GetComponent<Health>();
         StartCoroutine(RegenLife());
     }
     private IEnumerator RegenLife()

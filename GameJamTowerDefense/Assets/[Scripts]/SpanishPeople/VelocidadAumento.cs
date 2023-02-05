@@ -8,7 +8,7 @@ public class VelocidadAumento : MonoBehaviour
     SpanishStats spanishStats;
     private void Awake()
     {
-        spanishStats = new SpanishStats();
+        spanishStats = GetComponent <SpanishStats>();
         speed = spanishStats.Health;
         speedrate = spanishStats.SpeedRate;
     }

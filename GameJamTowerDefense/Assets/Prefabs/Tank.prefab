@@ -130,7 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   movementSpeed: 1.4
+  target: {fileID: 0}
   rotationSpeed: 6
+  cont: 0
 --- !u!114 &2123806258297959774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 450
-  _speed: 1.4
+  _speed: 14
   _regenRate: 50
   _speedRate: 0
   _cost: 300

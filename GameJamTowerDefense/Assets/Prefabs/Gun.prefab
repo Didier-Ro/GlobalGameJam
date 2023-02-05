@@ -706,7 +706,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8600855241754954682
 MonoBehaviour:
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectedTarget: {fileID: 0}
-  _maxAttackRange: 12
+  _maxAttackRange: 30
   OnEnemyDetected:
     m_PersistentCalls:
       m_Calls:

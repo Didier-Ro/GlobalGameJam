@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _Sebastian = default;
     [SerializeField] private GameObject _heroe = default;
     [SerializeField] private GameObject _heldWeapon = default;
+    [SerializeField] private GameObject _soldado = default;
     [SerializeField] private Camera _mainCamera = default;
     [SerializeField] private float _maxRayDistance = 20;
     [SerializeField] private AudioClip _summonSound = default;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
                 _heldWeapon = Instantiate(_Sebastian);
                 attackerButton.SetActive(false);
                attackerShop.GetComponent<CloseDropdownMenu>().IsTrue();
-                BuyingACard(700, true);
+                BuyingACard(200, true);
                 break;
             case "Heroe":
                 _heldWeapon = Instantiate(_heroe);
@@ -65,6 +66,12 @@ public class PlayerController : MonoBehaviour
                 defenderButton.SetActive(false);
                 defenderShop.GetComponent<CloseDropdownMenu>().IsTrue();
                 BuyingACard(700,false);
+                break;
+            case "Soldado":
+                _heldWeapon = Instantiate(_soldado);
+                attackerButton.SetActive(false);
+                attackerShop.GetComponent<CloseDropdownMenu>().IsTrue();
+                BuyingACard(150, true);
                 break;
             default:
                 Debug.LogError($"Weapon type {weaponType} is not valid");

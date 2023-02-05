@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameState _gameState = default;
     [SerializeField] private GameObject _AttackerUI = default;
     [SerializeField] private GameObject _DefenderUI = default;
+    [SerializeField] private GameObject _piramide = default;
+    [SerializeField] private GameObject _panel = default;
     public float Player1Score = default;
     public float Player2Score = default;
     public float PlayerHealthRound = default;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        PlayerActualHealth = _piramide.GetComponent<Health>().CurrentHealth;
         if (RoundManager.RoundInstance.DefenderTurn)
         {
             _DefenderUI.SetActive(true);
@@ -135,5 +138,10 @@ public class GameManager : MonoBehaviour
     {
         Player1Gold = 550;
         Player2Gold = 550;
+    }
+
+    public void Victory()
+    {
+        _panel.SetActive(true);
     }
 }

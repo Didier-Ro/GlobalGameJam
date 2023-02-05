@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6025386086605508086}
   - component: {fileID: 7592198303292219362}
   - component: {fileID: 5362375626141289432}
+  - component: {fileID: -4855029710814472541}
   m_Layer: 3
   m_Name: Sebastian
   m_TagString: Espanol
@@ -108,7 +109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7493721672967037080}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14ce4c8087503d14cb0b150bed137ee9, type: 3}
   m_Name: 
@@ -122,14 +123,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7493721672967037080}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1a7fd37fd2c87d429fdcb6cc307083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
   movementSpeed: 1
+  target: {fileID: 0}
   rotationSpeed: 6
+  cont: 0
 --- !u!114 &5362375626141289432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7493721672967037080}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cae698c6ef7db94419a0c420ce1ca378, type: 3}
   m_Name: 
@@ -150,3 +153,22 @@ MonoBehaviour:
   OnZeroHealth:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-4855029710814472541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7493721672967037080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04facdd1779951b41b9fd4ed86357dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _speed: 10
+  _regenRate: 50
+  _speedRate: 2.5
+  _cost: 30
+  _deathAward: 2
+  _damage: 40

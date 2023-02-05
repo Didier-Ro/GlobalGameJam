@@ -14,6 +14,7 @@ TagManager:
   - Left
   - Mid
   - Right
+  - Piramide
   layers:
   - Default
   - TransparentFX
