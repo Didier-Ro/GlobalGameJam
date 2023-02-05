@@ -19,10 +19,10 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void PlaySFX(AudioClip clip)
+    /*public void PlaySFX(AudioClip clip)
     {
-        SfxSource.PlayOneShot(clip);
-    }
+       SfxSource.PlayOneShot(clip);
+    }*/
     public void PlayMusic(AudioClip music)
     {
         musicSource.clip = music;
