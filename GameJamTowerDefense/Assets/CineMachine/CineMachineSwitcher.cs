@@ -5,20 +5,20 @@ using UnityEngine;
 public class CineMachineSwitcher : MonoBehaviour
 {
     private Animator animator;
-  [SerializeField] private RoundManager roundManager;
-  [SerializeField] private int StateCamera = 1;
+    [SerializeField] private int StateCamera = 1;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             Debug.Log(StateCamera);
             SwitchCamera();
         }
-     
+
     }
     public void SwitchCamera()
     {
@@ -35,11 +35,14 @@ public class CineMachineSwitcher : MonoBehaviour
                 StateCamera++;
                 break;
             case 3:
-                roundManager._roundLeft--;
+                if (RoundManager.RoundInstance._roundLeft == 6)
+                {
+                    RoundManager.RoundInstance.ResetAll();
+                }
+                RoundManager.RoundInstance._roundLeft--;
                 animator.Play("MexicanCamera");
                 StateCamera = 1;
                 break;
         }
-        Debug.Log("hola");
     }
 }

@@ -16,8 +16,10 @@ public class CloseDropdownMenu : MonoBehaviour
         _hideDropdown = true;
     }
 
+
     public void CloseBackgroundMenu()
     {
+
         _background.SetActive(false);
         _hideDropdown= false;
     }

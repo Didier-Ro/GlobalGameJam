@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UnityEvent OnGameOver = default;
     [SerializeField] private AudioClip _backgroundMusic = null;
     [SerializeField] private GameState _gameState = default;
+    [SerializeField] private GameObject _AttackerUI = default;
+    [SerializeField] private GameObject _DefenderUI = default;
     public float Player1Score = default;
     public float Player2Score = default;
     public float PlayerHealthRound = default;
@@ -32,6 +34,24 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.PlayMusic(_backgroundMusic);
+    }
+    private void Update()
+    {
+        if (RoundManager.RoundInstance.DefenderTurn)
+        {
+            _DefenderUI.SetActive(true);
+            _AttackerUI.SetActive(false);
+        }
+        else if(RoundManager.RoundInstance.AttackerTurn) 
+        { 
+            _AttackerUI.SetActive(true);
+            _DefenderUI.SetActive(false);
+        }
+        else
+        {
+            _AttackerUI.SetActive(false);
+            _DefenderUI.SetActive(false);
+        }
     }
 
 

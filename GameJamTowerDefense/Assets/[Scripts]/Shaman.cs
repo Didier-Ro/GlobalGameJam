@@ -11,7 +11,7 @@ public class Shaman : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(_enemy==null&&other.CompareTag("Enemy"))
+        if(_enemy==null&&other.CompareTag("Espanol"))
         {
             _enemy = other.transform;
             StartCoroutine(ShamanAOE());

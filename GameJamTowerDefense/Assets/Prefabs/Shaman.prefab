@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3468366481395122352}
   m_Layer: 0
   m_Name: Shaman
-  m_TagString: Untagged
+  m_TagString: Azteca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
