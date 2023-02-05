@@ -25,6 +25,10 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void HeroShield()
+    {
+        CurrentHealth += 150;
+    }
     private void OnEnable()
     {
         _currentHealth = _maxHealt;
