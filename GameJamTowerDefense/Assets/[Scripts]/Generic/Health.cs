@@ -24,6 +24,10 @@ public class Health : MonoBehaviour
             OnZeroHealth?.Invoke();
         }
     }
+    public void ReceiveHealth(int healthAmount)
+    {
+        CurrentHealth += healthAmount;
+    }
 
     private void OnEnable()
     {

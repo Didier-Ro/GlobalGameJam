@@ -35,11 +35,14 @@ public class CineMachineSwitcher : MonoBehaviour
                 StateCamera++;
                 break;
             case 3:
-                roundManager._roundLeft--;
+                if (RoundManager.RoundInstance._roundLeft == 6)
+                {
+                    RoundManager.RoundInstance.ResetAll();
+                }
+                 RoundManager.RoundInstance._roundLeft--;
                 animator.Play("MexicanCamera");
                 StateCamera = 1;
                 break;
         }
-        Debug.Log("hola");
     }
 }

@@ -630,6 +630,61 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1323648400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323648402}
+  - component: {fileID: 1323648401}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1323648401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323648400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d58f99faffbb941a45c33df39f1062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeSpeed: 1
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
+  _gameState: {fileID: 11400000, guid: 82b103bc45547504db270181d76d8e9b, type: 2}
+  Player1Score: 0
+  Player2Score: 0
+  PlayerHealthRound: 500
+  PlayerActualHealth: 0
+  Player1Gold: 0
+  Player2Gold: 0
+--- !u!4 &1323648402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323648400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.450202, y: -3.9105172, z: -16.067623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433752080
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,9 +997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1494dc6ad6da9dc44a3f372cd2dd26bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _preparationTime: 10
-  _roundDuration: 15
-  _rounds: 3
+  _preparationTime: 5
+  _roundDuration: 10
+  _rounds: 10
 --- !u!114 &1627527173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,8 +1015,9 @@ MonoBehaviour:
   _timeleft: 0
   _time: 0
   _roundLeft: 0
-  _timerOn: 0
-  _defenseTurn: 1
+  player1Streak: 0
+  player2Streak: 0
+  _phaseTimer: 0
   textTime: {fileID: 1720703908}
   cineMachineSwitcher: {fileID: 1433752084}
 --- !u!1 &1709929329
