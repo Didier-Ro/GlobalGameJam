@@ -35,7 +35,7 @@ public class WeaponAttack : MonoBehaviour
             if (Physics.Raycast(_cannonBallSpawn.position, _cannonBallSpawn.forward, out hit, 10))
             {
                 Debug.Log(hit.collider.tag);
-                if (hit.collider.CompareTag("Enemy"))
+                if (hit.collider.CompareTag("Espanol"))
                 {
                     Instantiate(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.rotation);
                     Debug.Log("Instantiate");

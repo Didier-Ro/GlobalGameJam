@@ -8,6 +8,13 @@ TagManager:
   - Enemy
   - WeaponSlot
   - Music
+  - Azteca
+  - Espanol
+  - Camino
+  - Left
+  - Mid
+  - Right
+  - Piramide
   layers:
   - Default
   - TransparentFX

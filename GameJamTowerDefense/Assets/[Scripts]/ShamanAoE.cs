@@ -10,7 +10,7 @@ public class ShamanAoE : MonoBehaviour
     [SerializeField] private LayerMask _targetMask;
     void Start()
     {
-        Destroy(gameObject,1.5f);
+        Destroy(gameObject,.3f);
     }
 
     private void OnDestroy()
@@ -20,7 +20,7 @@ public class ShamanAoE : MonoBehaviour
         if (rangeChecks.Length != 0)
         {
             GameObject target = rangeChecks[0].gameObject;
-            target.GetComponent<Health>().ReceiveDamage(80);
+            target.GetComponent<Health>().ReceiveDamage(120);
         }
     }
 }
