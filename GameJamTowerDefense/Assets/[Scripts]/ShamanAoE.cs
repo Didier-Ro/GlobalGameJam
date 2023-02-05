@@ -15,11 +15,10 @@ public class ShamanAoE : MonoBehaviour
 
     private void OnDestroy()
     {
-        print("miguel se la ");
+ 
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, 1,_targetMask );
         if (rangeChecks.Length != 0)
         {
-            print("come");
             GameObject target = rangeChecks[0].gameObject;
             target.GetComponent<Health>().ReceiveDamage(80);
         }
