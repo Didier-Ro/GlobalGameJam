@@ -83,4 +83,9 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
     }
+
+    public void DestroyObject()
+    {
+
+    }
 }
