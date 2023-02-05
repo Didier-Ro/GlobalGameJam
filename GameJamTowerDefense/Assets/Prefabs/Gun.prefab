@@ -94,6 +94,8 @@ GameObject:
   - component: {fileID: 1378634284107492488}
   - component: {fileID: 4557632418325028763}
   - component: {fileID: 8600855241683428417}
+  - component: {fileID: 1681875838295811003}
+  - component: {fileID: 6341415695117943533}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Weapon
@@ -159,6 +161,54 @@ MonoBehaviour:
   _isEnemyInRange: 0
   _cannonBallPrefab: {fileID: 8973148418004223109, guid: 9322f76bdb0ddc144ba7bf5390688dfd, type: 3}
   _cannonBallSpawn: {fileID: 8950208436131309374}
+--- !u!114 &1681875838295811003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384020325481192502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae698c6ef7db94419a0c420ce1ca378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealt: 100
+  _currentHealth: 100
+  OnReceiveDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnZeroHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6341415695117943533}
+        m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+        m_MethodName: DestroyWithDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6341415695117943533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384020325481192502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ee067cbbee3b84c9268374de587066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyDelay: 0.1
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2224580373939231471
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +658,7 @@ GameObject:
   - component: {fileID: 8600855241754954682}
   m_Layer: 0
   m_Name: SphereDetector
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
