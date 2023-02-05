@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResourceControlller : MonoBehaviour
 {
-    [SerializeField] private float cost = 800;
+    [SerializeField] private float cost = default;
    
     void Update()
     {

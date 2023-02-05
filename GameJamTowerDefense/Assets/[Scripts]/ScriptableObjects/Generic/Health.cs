@@ -37,8 +37,7 @@ public class Health : MonoBehaviour
 
     private void OnEnable()
     {
-        spanishStats = GetComponent<SpanishStats>();
-        _maxHealt = spanishStats.Health;
+        //_maxHealt = spanishStats.Health;
         _currentHealth = _maxHealt;
     }
     public void HeroShield()

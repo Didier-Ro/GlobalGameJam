@@ -11,7 +11,7 @@ public class ResourceController2 : MonoBehaviour
     {
         if (RoundManager.RoundInstance._roundLeft > 5)
         {
-            if (GameManager.Instance.Player2Gold < cost)
+            if (GameManager.Instance.Player2Gold <= cost)
             {
                 gameObject.GetComponent<Button>().enabled = false;
                 gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 125);
